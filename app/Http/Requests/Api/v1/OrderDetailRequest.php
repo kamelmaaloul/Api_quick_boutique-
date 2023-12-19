@@ -6,7 +6,7 @@ use App\Models\User;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 
-class UserRequest extends FormRequest
+class OrderDetailRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -37,7 +37,6 @@ class UserRequest extends FormRequest
         'password'     => 'confirmed|min:8',
         'gender'       => 'required|string|in:male,female',
         'address'      => 'required|string|min:5',
-        
         ];
         if($this->isMethod(static::METHOD_PUT)){
             $rules['password'].='|nullable';

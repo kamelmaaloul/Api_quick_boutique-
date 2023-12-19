@@ -26,7 +26,7 @@ class Product extends Model
         'quantite',
         'images',
         'cover',
-        'description',
+        'is_active',
     ];
 
     public function order_details (){

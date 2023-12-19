@@ -12,6 +12,7 @@ use App\Services\UserService;
 
 class UserController extends Controller
 {
+    
     private UserService $userService;
     function __construct(UserService $userService){
         $this->userService=$userService;
@@ -75,8 +76,10 @@ class UserController extends Controller
      * @param  \App\Models\User  $order
      * @return \Illuminate\Http\Response
      */
-    public function destroy(User $order)
+    public function destroy(User $user)
     {
-        //
+        $user = $this->userService->delete($user);
+        return $this->noContentresponse();
+
     }
 }
